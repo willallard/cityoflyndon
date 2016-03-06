@@ -4,6 +4,7 @@ body {
 }
 
 body {
+    font-family: 'Open Sans', sans-serif;
     padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     
 }
@@ -25,6 +26,7 @@ body {
 
 .navbar-inverse .navbar-brand {
     color: white;
+    font-weight: 800;
 }
 
 .navbar-inverse .navbar-nav>li>a {
@@ -33,6 +35,17 @@ body {
 
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
     border-color: #003DA5;
+}
+
+.lyndonMayor:after {
+    color: white;
+    float: left;
+    margin-left: -169px;
+    margin-top: 34px;
+    margin-bottom: 14px;
+    content: "Mayor Susan Barto";
+    font-size: 14px;
+
 }
 
 

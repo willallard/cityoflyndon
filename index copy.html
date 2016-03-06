@@ -1,19 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="scotchApp">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
       <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>City of Lyndon</title>
     
-
+     
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Fonts-->
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    
+      
     <!-- <link rel="stylesheet" type="text/css" href="css/styles.css"> -->
   </head>
-  <body>
+  <body ng-controller="mainController">
        
         <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -26,7 +31,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">City of Lyndon</a>
+                <a class="navbar-brand" href="index.html">cityoflyndon.org</a>
+                <span class="lyndonMayor">
+                
+                </span>
+                
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -99,10 +108,12 @@
       <div class="container">
         <div class="row">
             <div class="col-lg-12">
+                <div ng-view>
                 <h2 class="page-header">City News</h2>
-            </div>
+            
             <div class="col-md-6">
                 <h3>This Is Our First News Post</h3><h6>February 10th, 2016</h6>
+                {{ message }}
                 <p>This is another paragraph! Does it look ok? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde. </p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
@@ -113,6 +124,8 @@
                 <img class="img-responsive" src="http://placehold.it/700x450" alt="">
             </div>
         </div>
+        </div>
+        </div>
         <!-- /.row -->
 
         <hr>
@@ -122,9 +135,11 @@
         <div class="container-fluid" class="footer">
         <div class="col-sm-4">
             <h4>Quick Links</h4>
+            
         </div>
             <div class="col-sm-4">
             <h4>Here To Help</h4>
+                
         </div>
             <div class="col-sm-4">
             
@@ -146,5 +161,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- Angular -->
+    <script src="js/angular.min.js" type="text/javascript"></script>
+    <script src="js/script.js" type="text/javascript"></script>
+    
   </body>
 </html>
