@@ -48,7 +48,21 @@ body {
 
 }
 
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+    background-color: #003DA5; 
+}
 
+.navbar-inverse .navbar-toggle {
+    border-color: #003DA5;
+}
+
+.navbar-nav>li>a {
+    padding-top: 25px;
+}
+
+.navbar-toggle {
+    padding-top: 20px;
+}
 
 
 
@@ -74,6 +88,8 @@ header.carousel .fill {
    
 
 h4 {
+    font-weight: 700;
+    font-size: 1.5em;
     text-align: center;
 }
 
@@ -81,6 +97,32 @@ h4 {
     background-color: #D7D7D7;
 
 }
+
+
+#lynFooterCol1 {
+    color: black;
+    
+}
+
+#lynFooterCol2 {
+    color: black;
+    
+}
+
+#lynFooterCol3 {
+    color: black;
+    
+}
+
+
+h5 {
+    text-align: center;
+}
+
+
+
+
+
 
 /* Responsive Styles */
 
