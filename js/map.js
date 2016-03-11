@@ -64,7 +64,9 @@ var neighborhoods = [
   {lat: 38.265912, lng: -85.605535},
   {lat: 38.254517, lng: -85.598750},
   {lat: 38.267862, lng: -85.612494},
-  {lat: 38.262266, lng: -85.581579},
+  {lat: 38.261453, lng: -85.582727},
+  {lat: 38.268058, lng: -85.590171},
+
 ];
 
 var markers = [];
@@ -87,13 +89,18 @@ var styleArray = [
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 15,
-    center: {lat: 38.2628323, lng: -85.6052176},
+    zoom: 14,
+    center: {lat: 38.263186, lng: -85.599403},
     scrollwheel: false,
     styles: styleArray, 
+    mapTypeControl: false,
+    
+    
     
   });
 }
+
+
 
 function drop() {
   clearMarkers();
@@ -118,6 +125,8 @@ function clearMarkers() {
   }
   markers = [];
 }
+
+
 
 
  
