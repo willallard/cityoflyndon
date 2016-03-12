@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>City of Lyndon</title>
+    
+     
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Fonts-->
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    
+      
+    <!-- <link rel="stylesheet" type="text/css" href="css/styles.css"> -->
+  </head>
+  <body ng-app="formExample">
+      
+       
+        <!-- Navigation -->
+    
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">cityoflyndon.org</a>
+                <span class="lyndonMayor">
+                
+                </span>
+                
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="">City Information</a>
+                    </li>
+                    <li>
+                        <a href="">Government</a>
+                    </li>
+                    <li>
+                        <a href="">Visit</a>
+                    </li>
+                    <li>
+                        <a href="">Services</a>
+                    </li>
+                    <li>
+                        <a href="">Contact</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+      
+      <div class="container" id="whitespace">
+          <div ng-controller="ExampleController">
+  <form novalidate class="simple-form">
+    Name: <input type="text" ng-model="user.name" /><br />
+    Phone: <input type="tel" ng-model="user.tel" /><br />
+    E-mail: <input type="email" ng-model="user.email" /><br />
+    Problem:
+    <input type="text" ng-model="text" name="text" /><br />
+    <input type="submit" ng-click="update(user)" value="Submit" />
+      
+     
+  </form>
+          
+      
+  
+</div>
+</div>
+<script>
+  angular.module('formExample', [])
+    .controller('ExampleController', ['$scope', function($scope) {
+      $scope.master = {};
+
+      $scope.update = function(user) {
+        $scope.master = angular.copy(user);
+      };
+
+      $scope.reset = function() {
+        $scope.user = angular.copy($scope.master);
+      };
+
+      $scope.reset();
+        
+     $scope.list = [];
+      $scope.text = 'hello';
+      $scope.submit = function() {
+        if ($scope.text) {
+          $scope.list.push(this.text);
+          $scope.text = '';
+        }
+    }]);
+</script>
+        
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+       <div class="container-fluid" class="footer">
+        
+            <div class="col-sm-4">
+            <h4>Here To Help</h4>
+            <h5><a id="lynFooterCol2" href="tel:502-423-0932"><span class="glyphicon glyphicon-earphone"></span> Call (502) 423-0932</a><br></h5>
+                <h5><a id="lynFooterCol2" href="reportaproblem.html"><span class="glyphicon glyphicon-question-sign"></span> Report A Problem</a></h5>
+                <h5><a id="lynFooterCol2" href="sanitationholidayschedule.html">Sanitation Holiday Schedule</a></h5>
+                
+        </div>
+            
+            <div class="col-sm-4">
+            <h4>Quick Links</h4>
+            <h5><a id="lynFooterCol1" href="citycalendar.html">City Calendar</a></h5>
+            <h5><a id="lynFooterCol1" href="citymap2.html">City Map</a></h5>
+            <h5><a id="lynFooterCol1" href="parkrules.html">Park Rules</a></h5>
+            
+        </div>
+            
+            <div class="col-sm-4">
+            
+            <h4>Connect With Us</h4>
+            <h5><a id="lynFooterCol3" href="https://www.facebook.com/City-of-Lyndon-201389459890643/?fref=ts">Like us on Facebook</a></h5>
+            <h5><a id="lynFooterCol3" hfref="https://twitter.com/CityOfLyndon">Follow us on Twitter</a></h5>
+            
+        </div>
+        
+    </div>
+      
+    
+     
+    
+        
+          
+    
+      
+     
+    
+      
+          
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- Angular -->
+    <script src="js/angular.min.js" type="text/javascript"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+    
+  </body>
+</html>
