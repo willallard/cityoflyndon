@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+    
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>City of Lyndon</title>
+    
+     
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Fonts-->
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    
+      
+    <!-- <link rel="stylesheet" type="text/css" href="css/styles.css"> -->
+  </head>
+  <body>
+      
+       
+        <!-- Navigation -->
+    
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index%20copy.html">cityoflyndon.org</a>
+                <span class="lyndonMayor">
+                
+                </span>
+                
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="">City Information</a>
+                    </li>
+                    <li>
+                        <a href="">Government</a>
+                    </li>
+                    <li>
+                        <a href="">Visit</a>
+                    </li>
+                    <li>
+                        <a href="">Services</a>
+                    </li>
+                    <li>
+                        <a href="">Contact</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+      
+     
+      
+      
+      
+      
+
+    <div id="map"></div>
+      
+       
+        
+        
+      
+      
+      
+    <input id="origin-input" class="controls" type="text"
+        placeholder="Enter an origin location">
+          
+          
+          
+
+    <input id="destination-input" class="controls" type="text"
+        placeholder="Enter a destination location">
+          
+    
+          
+    <div id="mode-selector" class="controls">
+      <input type="radio" name="type" id="changemode-walking" checked="checked">
+      <label for="changemode-walking">Walking</label>
+
+      <input type="radio" name="type" id="changemode-transit">
+      <label for="changemode-transit">Transit</label>
+
+      <input type="radio" name="type" id="changemode-driving">
+      <label for="changemode-driving">Driving</label>
+              </div>
+    
+     
+          
+          
+      
+      
+      
+      
+      <div class="container-fluid" class="footer">
+        
+            <div class="col-sm-4">
+            <h4>Here To Help</h4>
+            <h5><a id="lynFooterCol2" href="tel:502-423-0932"><span class="glyphicon glyphicon-earphone"></span> Call (502) 423-0932</a><br></h5>
+                <h5><a id="lynFooterCol2" href="reportaproblem.html"><span class="glyphicon glyphicon-question-sign"></span> Report A Problem</a></h5>
+                <h5><a id="lynFooterCol2" href="sanitationholidayschedule.html">Sanitation Holiday Schedule</a></h5>
+                
+        </div>
+            
+            <div class="col-sm-4">
+            <h4>Quick Links</h4>
+            <h5><a id="lynFooterCol1" href="citycalendar.html">City Calendar</a></h5>
+            <h5><a id="lynFooterCol1" href="pages/citymap.html">City Map</a></h5>
+            <h5><a id="lynFooterCol1" href="parkrules.html">Park Rules</a></h5>
+            
+        </div>
+            
+            <div class="col-sm-4">
+            
+            <h4>Connect With Us</h4>
+            <h5><a id="lynFooterCol3" href="https://www.facebook.com/City-of-Lyndon-201389459890643/?fref=ts">Like us on Facebook</a></h5>
+            <h5><a id="lynFooterCol3" hfref="https://twitter.com/CityOfLyndon">Follow us on Twitter</a></h5>
+            
+        </div>
+        
+    </div>
+      
+      
+      
+
+    <script>
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+        var styleArray = [
+    {
+        featureType: "all",
+        stylers: [
+            { hue: "#003DA5" },
+        ]
+    }
+];        
+        
+      function initMap() {
+        var origin_place_id = null;
+        var destination_place_id = null;
+        var travel_mode = google.maps.TravelMode.WALKING;
+        var map = new google.maps.Map(document.getElementById('map'), {
+          mapTypeControl: false,
+          center: {lat: 38.263186, lng: -85.599403},
+          zoom: 14,
+          scrollwheel: false,
+          styles: styleArray,
+        
+        });
+        var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer;
+        directionsDisplay.setMap(map);
+          
+        
+
+        var origin_input = document.getElementById('origin-input');
+        var destination_input = document.getElementById('destination-input');
+        var modes = document.getElementById('mode-selector');
+
+        map.controls[google.maps.ControlPosition.CENTER].push(origin_input);
+        map.controls[google.maps.ControlPosition.CENTER].push(destination_input);
+        map.controls[google.maps.ControlPosition.CENTER].push(modes);
+
+        var origin_autocomplete = new google.maps.places.Autocomplete(origin_input);
+        origin_autocomplete.bindTo('bounds', map);
+        var destination_autocomplete =
+            new google.maps.places.Autocomplete(destination_input);
+        destination_autocomplete.bindTo('bounds', map);
+          
+          
+         
+          
+
+        // Sets a listener on a radio button to change the filter type on Places
+        // Autocomplete.
+        function setupClickListener(id, mode) {
+          var radioButton = document.getElementById(id);
+          radioButton.addEventListener('click', function() {
+            travel_mode = mode;
+          });
+        }
+        setupClickListener('changemode-walking', google.maps.TravelMode.WALKING);
+        setupClickListener('changemode-transit', google.maps.TravelMode.TRANSIT);
+        setupClickListener('changemode-driving', google.maps.TravelMode.DRIVING);
+
+        function expandViewportToFitPlace(map, place) {
+          if (place.geometry.viewport) {
+            map.fitBounds(place.geometry.viewport);
+          } else {
+            map.setCenter(place.geometry.location);
+            map.setZoom(14);
+          }
+        }
+
+        origin_autocomplete.addListener('place_changed', function() {
+          var place = origin_autocomplete.getPlace();
+          if (!place.geometry) {
+            window.alert("Autocomplete's returned place contains no geometry");
+            return;
+          }
+          expandViewportToFitPlace(map, place);
+
+          // If the place has a geometry, store its place ID and route if we have
+          // the other place ID
+          origin_place_id = place.place_id;
+          route(origin_place_id, destination_place_id, travel_mode,
+                directionsService, directionsDisplay);
+        });
+
+        destination_autocomplete.addListener('place_changed', function() {
+          var place = destination_autocomplete.getPlace();
+          if (!place.geometry) {
+            window.alert("Autocomplete's returned place contains no geometry");
+            return;
+          }
+          expandViewportToFitPlace(map, place);
+
+          // If the place has a geometry, store its place ID and route if we have
+          // the other place ID
+          destination_place_id = place.place_id;
+          route(origin_place_id, destination_place_id, travel_mode,
+                directionsService, directionsDisplay);
+        });
+
+        function route(origin_place_id, destination_place_id, travel_mode,
+                       directionsService, directionsDisplay) {
+          if (!origin_place_id || !destination_place_id) {
+            return;
+          }
+          directionsService.route({
+            origin: {'placeId': origin_place_id},
+            destination: {'placeId': destination_place_id},
+            travelMode: travel_mode
+          }, function(response, status) {
+            if (status === google.maps.DirectionsStatus.OK) {
+              directionsDisplay.setDirections(response);
+            } else {
+              window.alert('Directions request failed due to ' + status);
+            }
+          });
+        }
+          
+        
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBENKcKv0-L01nCg8ZRBflIuIZjpUbZhXg&libraries=places&callback=initMap"
+        async defer></script>
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- Angular -->
+    <script src="js/angular.min.js" type="text/javascript"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+  </body>
+</html>
