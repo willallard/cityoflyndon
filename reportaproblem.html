@@ -74,41 +74,43 @@
                 <h2 class="page-header">Report a Problem</h2>
             
             <div class="col-md-6">
-                <p>Your problem is very important to us. Please don't hesitate to let us know! </p>
+                <p>We encourage you to use this form if you would like to report a concern or problem. Your problem is very important to us and we will get back to you as soon as possible. </p> <br>
           
-          </div>
+         
           
-          <div class="col-md-6">
+          
         <div ng-controller="SimpleController">
         <form ng-submit="addEntry()">
-           Name:<input type="text" ng-model="newData.name" required><br>
-           Phone:<input type="tel" ng-model="newData.phone" required><br>
-           Problem:<input type="text" ng-model="newData.problem" required><br>
-           <input type="submit" id = "submit" value="submit">
-              
+            <fieldset class="form-group">
+           <label>Name</label><input type="text" class="form-control" ng-model="newData.name" placeholder="Enter name" required>
+        
+            </fieldset>    
+            <fieldset class="form-group">
+           <label>Phone</label><input type="tel" class="form-control" ng-model="newData.phone" placeholder="(XXX) XXX-XXXX" required>
+            <small class="text-muted">We'll never share your phone number with anyone else.</small>
+          </fieldset> 
+         <fieldset class="form-group">
+             <label>Problem</label><textarea type="text" class="form-control" ng-model="newData.problem" rows="3" required></textarea>
+            </fieldset>  
+             
+           <input type="submit" id ="submit" value="submit">
+             
         </form>      
+        
+       
         
           
               </div>
   
        </div>
+                 
 
               </div>
           </div>
+          
       </div>
-<script>
-  angular.module('submitExample', [])
-    .controller('ExampleController', ['$scope', function($scope) {
-      $scope.list = [];
-      $scope.text = 'hello';
-      $scope.submit = function() {
-        if ($scope.text) {
-          $scope.list.push(this.text);
-          $scope.text = '';
-        }
-      };
-    }]);
-</script>
+      
+
         
       
       
