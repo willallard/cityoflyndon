@@ -19,7 +19,7 @@
       
     <!-- <link rel="stylesheet" type="text/css" href="css/styles.css"> -->
   </head>
-  <body ng-app="formExample">
+  <body ng-app="submitExample">
       
        
         <!-- Navigation -->
@@ -34,7 +34,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">cityoflyndon.org</a>
+                <a class="navbar-brand" href="index%20copy.html">cityoflyndon.org</a>
                 <span class="lyndonMayor">
                 
                 </span>
@@ -51,9 +51,6 @@
                         <a href="">Government</a>
                     </li>
                     <li>
-                        <a href="">Visit</a>
-                    </li>
-                    <li>
                         <a href="">Services</a>
                     </li>
                     <li>
@@ -67,7 +64,7 @@
         <!-- /.container -->
     </nav>
       
-      <div class="container" id="whitespace">
+      <div class="container">
           <div class="row">
             <div class="col-lg-12">
                 
@@ -76,13 +73,10 @@
             <div class="col-md-6">
                 <p>We encourage you to use this form if you would like to report a concern or problem. Your problem is very important to us and we will get back to you as soon as possible. </p> <br>
           
-         
-          
-          
-        <div ng-controller="SimpleController">
+        <div ng-controller="ExampleController">
         <form ng-submit="addEntry()">
             <fieldset class="form-group">
-           <label>Name</label><input type="text" class="form-control" ng-model="newData.name" placeholder="Enter name" required>
+           <label>Name</label><input type="text" class="form-control" ng-model="name" placeholder="Enter name" required>
         
             </fieldset>    
             <fieldset class="form-group">
@@ -92,24 +86,33 @@
          <fieldset class="form-group">
              <label>Problem</label><textarea type="text" class="form-control" ng-model="newData.problem" rows="3" required></textarea>
             </fieldset>  
-             
-           <input type="submit" id ="submit" value="submit">
-           <p ng-value="newData.name" ></p>  
+             <fieldset class="form-group">
+            <input class="btn btn-primary" id="submit" type="submit" value="submit" ng-click="wak = 1"></input>
+            </fieldset> 
+            <fieldset class="form-group">
+            <p ng-show=wak>Thanks, {{ name }}! We have recieved your problem and will get right on it. </p>
+            </fieldset>
+            
         </form>      
         
-       
-        
           
-              </div>
+        </div> 
                 
   
        </div>
+              
+              <div class="col-md-6">
+                <img class="img-responsive" src="http://placehold.it/700x450" alt="">
+            </div>
                  
 
               </div>
           </div>
+      
           
       </div>
+    <hr>
+    
       
 
         
@@ -132,8 +135,8 @@
             <div class="col-sm-4">
             <h4>Here To Help</h4>
             <h5><a id="lynFooterCol2" href="tel:502-423-0932"><span class="glyphicon glyphicon-earphone"></span> Call (502) 423-0932</a><br></h5>
-                <h5><a id="lynFooterCol2" href="reportaproblem.html"><span class="glyphicon glyphicon-question-sign"></span> Report A Problem</a></h5>
-                <h5><a id="lynFooterCol2" href="sanitationholidayschedule.html">Sanitation Holiday Schedule</a></h5>
+                <h5><a id="lynFooterCol2" href="reportaproblem2.html"><span class="glyphicon glyphicon-question-sign"></span> Report A Problem</a></h5>
+                <h5><a id="lynFooterCol2" href="sanitationholidayschedule.html"><span class="glyphicon glyphicon-tree-deciduous"></span>Sanitation Holiday Schedule</a></h5>
                 
         </div>
             
@@ -172,7 +175,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <!-- Angular -->
-    <script src="js/angular.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.min.js" type="text/javascript"></script>
     <script src="js/app.js" type="text/javascript"></script>
     
   </body>

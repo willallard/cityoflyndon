@@ -99,7 +99,7 @@ header.carousel .fill {
 h4 {
     font-weight: 700;
     font-size: 1.5em;
-    text-align: center;
+    padding-left: 100px;
 }
 
 .container-fluid {
@@ -128,13 +128,11 @@ h4 {
 
 
 h5 {
-    text-align: center;
+    padding-left: 100px;
 }
 
 
-#whitespace {
-    height: 100%
-}
+
 
 
       
@@ -197,6 +195,9 @@ h5 {
         font-size: 13px;
         font-weight: 300;
       }
+
+
+
         
 /*form {
     background: #D7D7D7;
@@ -228,4 +229,6 @@ h5 {
     header.carousel .carousel {
         height: 70%;
     }
+    
+    
 }
