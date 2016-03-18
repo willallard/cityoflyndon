@@ -99,7 +99,7 @@ header.carousel .fill {
 h4 {
     font-weight: 700;
     font-size: 1.5em;
-    padding-left: 100px;
+    
 }
 
 .container-fluid {
@@ -128,7 +128,7 @@ h4 {
 
 
 h5 {
-    padding-left: 100px;
+   
 }
 
 
@@ -210,7 +210,15 @@ h5 {
 
 } */  
     
+.copybottom {
+    background-color: black;
+    color: #D7D7D7;
+}
 
+.copywords {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 /* Responsive Styles */
 
